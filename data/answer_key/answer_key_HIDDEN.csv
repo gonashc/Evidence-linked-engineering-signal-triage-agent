@@ -1,0 +1,164 @@
+issue_id,state,state_reason,closed_utc,priority_label,area_labels,other_labels
+angular-cli#34684,open,,,,area: @schematics/angular,
+angular-cli#34674,open,,,,area: @angular/build,
+angular-cli#34665,closed,completed,2026-11-06T22:42:14Z,,area: @angular/cli,needs: repro steps
+angular-cli#34622,closed,completed,2026-11-04T22:04:39Z,,area: @angular/cli,
+angular-cli#34590,closed,completed,2026-11-03T17:44:11Z,,area: @angular/build,
+angular-cli#34580,closed,completed,2026-10-29T14:49:56Z,,area: @ngtools/webpack,
+angular-cli#34574,closed,completed,2026-10-30T08:41:24Z,,area: @angular/build,
+angular-cli#34569,closed,completed,2026-10-30T10:36:53Z,,area: @angular/ssr,
+angular-cli#34567,closed,completed,2026-10-28T18:36:01Z,,area: @angular/ssr,
+angular-cli#34524,closed,completed,2026-11-02T17:05:28Z,,area: @angular/build,
+angular-cli#34520,closed,not_planned,2026-10-24T22:59:25Z,,area: @angular/build,
+angular-cli#34519,closed,not_planned,2026-10-24T20:21:20Z,,area: @angular/build,
+angular-cli#34518,closed,completed,2026-10-26T09:01:54Z,,,
+angular-cli#34515,closed,not_planned,2026-10-24T08:22:34Z,,area: @angular/build,
+angular-cli#34514,closed,completed,2026-10-26T18:22:29Z,,area: @angular/build,
+angular-cli#34511,closed,completed,2026-10-26T08:54:42Z,,area: @angular/ssr,
+angular-cli#34499,closed,not_planned,2026-10-22T17:54:55Z,,area: @angular/build,
+angular-cli#34474,closed,completed,2026-10-26T08:56:13Z,,area: @angular/ssr,
+angular-cli#34455,closed,completed,2026-10-21T13:30:23Z,,area: @angular/cli,
+angular-cli#34452,closed,completed,2026-10-21T13:32:37Z,,area: @angular/build,
+angular-cli#34449,closed,completed,2026-10-27T09:22:38Z,,area: @schematics/angular,
+angular-cli#34447,closed,completed,2026-10-21T13:45:51Z,,area: @schematics/angular,
+angular-cli#34446,open,,,,area: @angular/build,
+angular-cli#34443,closed,completed,2026-10-23T16:33:28Z,,area: @angular/build,
+angular-cli#34410,closed,completed,2026-10-26T09:15:43Z,,area: @angular/ssr,
+angular-cli#34402,closed,completed,2026-10-27T08:02:10Z,,area: @angular/cli,
+angular-cli#34396,open,,,,area: @angular/build,
+angular-cli#34395,closed,completed,2026-10-20T15:24:55Z,,area: @angular/build,
+angular-cli#34390,closed,not_planned,2026-10-18T22:35:34Z,,area: @angular/build,
+angular-cli#34388,closed,completed,2026-10-19T15:48:56Z,,area: @schematics/angular,
+angular-cli#34385,closed,completed,2026-10-19T15:49:53Z,,area: @schematics/angular,
+angular-cli#34369,closed,completed,2026-10-19T07:35:19Z,,area: @angular/ssr;area: @angular/build,
+angular-cli#34365,closed,not_planned,2026-10-16T06:56:50Z,,area: @angular/ssr,
+angular-cli#34360,closed,not_planned,2026-10-15T15:22:32Z,,area: @angular-devkit/build-angular,
+angular-cli#34358,closed,completed,2026-10-15T14:22:33Z,,area: @angular/build,
+angular-cli#34335,closed,completed,2026-10-14T16:35:04Z,,area: @angular/build,
+angular-cli#34330,closed,completed,2026-10-13T15:57:03Z,,,
+angular-cli#34320,closed,completed,2026-10-14T06:31:43Z,,area: @angular/ssr,
+angular-cli#34312,closed,completed,2026-10-16T16:25:08Z,,area: @angular/build,
+angular-cli#34309,closed,completed,2026-10-12T20:45:02Z,,area: @angular-devkit/build-angular,
+angular#71957,open,,,,area: build & ci,
+angular#71956,open,,,,area: compiler,
+angular#71953,open,,,,area: common/http,
+angular#71929,open,,,,area: core,
+angular#71917,open,reopened,,,area: common/http,
+angular#71916,closed,completed,2026-11-11T00:17:54Z,,area: common/http,
+angular#71915,closed,duplicate,2026-11-10T19:56:29Z,,area: compiler,
+angular#71914,open,,,,area: compiler,
+angular#71912,open,reopened,,,area: dev-infra,
+angular#71895,closed,completed,2026-11-10T17:37:13Z,,area: compiler,
+angular#71893,closed,completed,2026-11-10T20:31:30Z,,area: common,
+angular#71888,closed,duplicate,2026-11-08T22:56:38Z,,area: core,
+angular#71881,open,,,,area: compiler,
+angular#71879,open,,,,area: compiler,feature
+angular#71873,open,,,,area: common,
+angular#71872,closed,duplicate,2026-11-08T14:24:51Z,,area: server,
+angular#71867,closed,not_planned,2026-11-08T15:47:01Z,,area: compiler,
+angular#71864,open,,,,area: language-service,
+angular#71849,closed,completed,2026-11-09T20:27:17Z,,area: router,
+angular#71837,closed,completed,2026-11-09T20:28:13Z,,area: router,open for contributions
+angular#71825,open,,,,area: zones,
+angular#71813,closed,duplicate,2026-11-04T19:25:18Z,,area: core,
+angular#71812,open,,,,area: common,
+angular#71806,open,,,,area: compiler,
+angular#71796,open,,,,area: docs,
+angular#71792,closed,duplicate,2026-11-03T12:17:12Z,,area: server,
+angular#71769,closed,completed,2026-11-10T20:31:05Z,,area: core,
+angular#71765,closed,completed,2026-11-11T00:57:02Z,,area: core,
+angular#71733,closed,completed,2026-11-09T22:34:06Z,,area: compiler,
+angular#71720,closed,completed,2026-11-10T19:08:55Z,,area: service-worker,
+angular#71703,open,reopened,,,area: animations,needs: clarification
+angular#71679,closed,not_planned,2026-10-28T13:06:43Z,,area: forms,
+angular#71674,closed,completed,2026-11-10T17:50:35Z,,area: compiler,
+angular#71663,closed,duplicate,2026-10-27T16:46:01Z,,area: docs-infra,
+angular#71660,closed,completed,2026-10-28T23:44:01Z,,area: core,
+angular#71636,open,,,,area: forms,forms: signals
+angular#71634,open,,,,area: forms,forms: signals
+angular#71633,open,,,,area: forms,forms: signals
+angular#71632,open,,,,area: forms,forms: signals
+angular#71631,open,,,,area: forms,forms: signals
+angular#71623,closed,completed,2026-11-04T00:28:30Z,,area: forms,forms: signals
+angular#71622,open,,,,area: forms,forms: signals
+angular#71621,closed,completed,2026-11-10T00:55:22Z,,area: forms,forms: signals
+angular#71618,open,,,,area: security,
+angular#71616,open,,,,area: forms,forms: signals
+angular#71603,open,,,,area: server,
+angular#71601,closed,not_planned,2026-10-24T20:55:21Z,,area: forms,
+angular#71596,closed,completed,2026-11-09T20:22:50Z,,area: router,
+angular#71594,closed,completed,2026-10-26T23:05:35Z,,area: router,
+angular#71592,closed,completed,2026-10-24T17:04:44Z,,area: docs-infra,
+angular#71585,open,,,,area: core,
+angular#71567,closed,completed,2026-10-23T22:37:57Z,,area: docs-infra,
+angular#71562,closed,duplicate,2026-10-23T16:17:46Z,,area: docs-infra,
+angular#71551,closed,completed,2026-10-23T21:13:49Z,,area: router,
+angular#71547,closed,completed,2026-10-29T04:28:44Z,P4,area: language-service,open for contributions
+angular#71545,open,reopened,,,area: core,
+angular#71540,closed,completed,2026-10-30T00:56:57Z,,area: router,
+angular#71518,closed,completed,2026-11-10T17:41:17Z,,area: core,
+angular#71511,open,,,,area: compiler,
+angular#71509,open,,,,area: compiler,
+angular#71465,closed,not_planned,2026-10-20T23:44:23Z,,area: router,
+angular#71459,open,,,,area: core,
+angular#71452,closed,completed,2026-10-20T18:13:56Z,,area: compiler,
+angular#71450,closed,completed,2026-10-23T21:13:28Z,,area: router,
+angular#71449,open,,,,area: core,
+angular#71446,closed,duplicate,2026-10-30T15:28:57Z,,area: core,
+angular#71443,open,,,,area: forms,forms: signals
+angular#71441,closed,completed,2026-10-25T14:38:23Z,,area: upgrade,
+angular#71435,closed,not_planned,2026-10-20T18:21:20Z,,area: zones,
+angular#71425,closed,completed,2026-10-20T07:44:28Z,,area: core,
+angular#71422,closed,completed,2026-11-10T19:10:55Z,,area: core,cross-cutting: resource
+angular#71421,open,,,,area: core,
+angular#71409,closed,not_planned,2026-10-17T15:57:02Z,,area: compiler,
+angular#71399,closed,not_planned,2026-10-16T17:37:23Z,,area: common/http,
+angular#71397,closed,completed,2026-10-16T18:55:12Z,,area: compiler,
+angular#71393,open,,,,area: compiler,
+angular#71390,open,,,,area: core,
+angular#71384,closed,not_planned,2026-10-30T02:08:40Z,,area: docs,
+angular#71377,closed,not_planned,2026-10-29T00:56:07Z,,area: forms,
+angular#71357,closed,completed,2026-10-21T17:03:50Z,,area: router,
+angular#71348,closed,completed,2026-10-21T16:51:54Z,,area: router,
+angular#71345,closed,completed,2026-10-21T16:40:55Z,P2,area: router;area: docs,open for contributions
+angular#71324,closed,not_planned,2026-10-13T13:00:53Z,P5,area: compiler,
+angular#71315,closed,duplicate,2026-10-13T18:18:55Z,,area: core,
+components#34105,open,,,,area: material/icon,feature;needs triage
+components#34101,closed,completed,2026-11-10T16:34:40Z,P3,area: aria/menu,
+components#34098,closed,completed,2026-11-09T08:44:33Z,,area: new,feature;needs triage
+components#34095,closed,completed,2026-11-10T16:29:57Z,P3,area: cdk/scrolling,
+components#34094,open,,,P4,area: material/slider,
+components#34076,closed,completed,2026-11-10T16:35:47Z,P3,area: aria/grid,
+components#34074,open,,,P3,area: aria/grid,
+components#34073,closed,completed,2026-11-06T16:37:10Z,P4,area: aria/menu,
+components#34072,open,,,,area: aria/menu,
+components#34071,open,,,,area: aria/menu,
+components#34060,closed,completed,2026-11-11T09:32:30Z,P3,area: aria/accordion,
+components#34058,closed,completed,2026-11-11T09:31:50Z,P3,area: aria/tree,
+components#34057,open,,,P3,area: material/select,Accessibility
+components#34052,closed,completed,2026-11-03T11:49:36Z,,area: material/progress-spinner,feature;needs triage
+components#34051,closed,completed,2026-11-03T11:49:33Z,,area: material/progress-spinner,docs;needs triage
+components#34041,closed,completed,2026-11-02T13:08:41Z,P3,area: aria/listbox,
+components#34038,closed,completed,2026-11-03T10:37:21Z,,area: docs,docs;needs triage
+components#34036,closed,completed,2026-11-02T13:05:34Z,,area: material/slider,needs triage
+components#34025,closed,completed,2026-11-04T09:00:11Z,P3,area: cdk/portal,
+components#34023,open,,,P4,area: cdk/portal,feature
+components#34022,open,,,P5,area: material/paginator,feature
+components#34021,closed,completed,2026-10-29T13:43:38Z,,area: material/paginator,feature;needs triage;gemini-triaged
+components#34019,closed,completed,2026-11-03T10:41:06Z,,area: cdk/layout,feature;needs triage;gemini-triaged
+components#34017,closed,completed,2026-10-30T06:52:28Z,,area: material/input,needs triage;gemini-triaged
+components#34013,closed,completed,2026-10-29T11:07:12Z,,area: material/datepicker,needs triage;gemini-triaged
+components#34011,closed,completed,2026-11-04T08:49:50Z,P3,area: aria/accordion,
+components#34005,closed,completed,2026-10-26T10:15:57Z,,area: material/dialog,feature;needs triage;gemini-triaged
+components#33999,closed,completed,2026-10-23T17:24:43Z,P3,area: cdk/a11y,
+components#33978,open,,,P3,area: material/datepicker,
+components#33976,closed,completed,2026-10-22T16:56:50Z,P3,area: aria/menu,
+components#33973,closed,completed,2026-11-06T20:11:44Z,,area: aria/combobox,gemini-triaged
+components#33972,closed,completed,2026-10-20T15:08:03Z,,area: aria/combobox,gemini-triaged
+components#33968,closed,completed,2026-10-20T15:15:56Z,P3,area: material/datepicker,
+components#33967,open,,,P3,area: material/menu,
+components#33964,open,,,,area: aria/menu,gemini-triaged
+components#33962,closed,completed,2026-10-20T15:15:30Z,P4,area: material/stepper,feature
+components#33961,open,,,,area: aria/tabs,gemini-triaged
+components#33952,closed,completed,2026-10-22T12:24:55Z,P3,area: material/datepicker,
+components#33950,open,,,P3,area: aria/tabs,feature
