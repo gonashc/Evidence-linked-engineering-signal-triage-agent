@@ -8,7 +8,7 @@ Built as a 3-day project from The Gen Academy *AI-Native Power User Workbook* (l
 
 | Day | Goal | State |
 | --- | --- | --- |
-| 1 | Scope, data pull, blind evidence table, draft rubric, 20-issue pilot | Draft, awaiting rubric decisions |
+| 1 | Scope, data pull, blind evidence table, rubric, 20-issue pilot | Done: rubric v0.2 approved Nov 12; pilot in `docs/pilot_triage.md` |
 | 2 | Full triage run, comment threads, dashboard, reusable skill, weekly refresh | Not started |
 | 3 | Accuracy check vs. human and maintainer labels, write-up | Not started |
 
@@ -24,7 +24,8 @@ Built as a 3-day project from The Gen Academy *AI-Native Power User Workbook* (l
 data/raw/          GitHub search API results, unmodified
 data/derived/      What the agent sees: evidence_blind.csv (one row per issue), bodies.jsonl
 data/answer_key/   Maintainer labels, state and close reason, hidden from the agent until scoring
-docs/rubric.md     Severity rubric and grouping rules
+docs/rubric.md     Severity rubric, grouping rules, decision log
+docs/pilot_triage.md  Day 1 pilot: 20 reports, 19 groups
 scripts/           normalize.py: raw results -> blind evidence table + answer key
 ```
 
