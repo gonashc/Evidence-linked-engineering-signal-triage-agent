@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(./data/answer_key/**)",
+      "Grep(./data/answer_key/**)",
+      "Glob(./data/answer_key/**)",
+      "Bash(cat *answer_key*)",
+      "Bash(head *answer_key*)",
+      "Bash(tail *answer_key*)",
+      "Bash(less *answer_key*)",
+      "Bash(more *answer_key*)",
+      "Bash(grep *answer_key*)",
+      "Bash(rg *answer_key*)",
+      "Bash(ls *answer_key*)"
+    ]
+  }
+}

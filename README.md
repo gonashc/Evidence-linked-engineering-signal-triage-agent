@@ -9,6 +9,7 @@ Built as a 3-day project from The Gen Academy *AI-Native Power User Workbook* (l
 | Day | Goal | State |
 | --- | --- | --- |
 | 1 | Scope, data pull, blind evidence table, rubric, 20-issue pilot | Done: rubric v0.2 approved Nov 12; pilot in `docs/pilot_triage.md` |
+| Setup | Claude Code project rules, answer-key deny rules, triage skill, blind-labels template | Done Nov 12 |
 | 2 | Full triage run, comment threads, dashboard, reusable skill, weekly refresh | Not started |
 | 3 | Accuracy check vs. human and maintainer labels, write-up | Not started |
 
@@ -34,6 +35,12 @@ scripts/           normalize.py: raw results -> blind evidence table + answer ke
 ```sh
 python3 -I scripts/normalize.py data/raw out
 ```
+
+## Working in this repo
+
+- `CLAUDE.md` holds the project rules every Claude Code session follows: answer-key ban, approval gate, evidence and data-handling rules.
+- `.claude/settings.json` denies reads of `data/answer_key/`.
+- `.claude/skills/signal-triage/SKILL.md` is the triage procedure and output format. It applies `docs/rubric.md` and doesn't copy it.
 
 ## Method rules
 
