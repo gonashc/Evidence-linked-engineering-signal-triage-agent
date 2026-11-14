@@ -74,7 +74,7 @@ for line in open(args.groups, encoding="utf-8"):
             agent[r["issue_id"]] = {"sev": sev, "cat": g["category"]}
 
 # human
-human, bad_human = {}, Counter()
+human, bad_human, bad_values = {}, Counter(), Counter()
 with open(args.human, encoding="utf-8-sig", newline="") as f:
     for row in csv.DictReader(f):
         iid = (row.get("issue_id") or "").strip()
@@ -82,8 +82,10 @@ with open(args.human, encoding="utf-8-sig", newline="") as f:
         s, c = norm_sev(raw_s), norm_cat(raw_c)
         if raw_s.strip() and not s:
             bad_human["unrecognised severity values"] += 1
+            bad_values[f"my_severity: {raw_s.strip()!r}"] += 1
         if raw_c.strip() and not c:
             bad_human["unrecognised category values"] += 1
+            bad_values[f"my_category: {raw_c.strip()!r}"] += 1
         human[iid] = {"sev": s, "cat": c}
 
 
@@ -163,3 +165,7 @@ with open(out, "w", encoding="utf-8", newline="") as f:
         w.writerow([i, A.get("sev", ""), H.get("sev", ""), M.get("sev", ""), A.get("cat", ""), H.get("cat", ""),
                     M.get("cat", ""), M.get("state", ""), M.get("reason", "")])
 print(f"\nPer-issue comparison written to {out} (for the human; not printed here).")
+if bad_values:
+    bv = Path(args.out) / "unrecognised_human_values.txt"
+    bv.write_text("".join(f"{v}\t{k}\n" for k, v in bad_values.most_common()), encoding="utf-8")
+    print(f"Unrecognised human values listed in {bv} (for the human; not printed here).")

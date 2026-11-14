@@ -11,7 +11,7 @@ Built as a 3-day project from The Gen Academy *AI-Native Power User Workbook* (l
 | 1 | Scope, data pull, blind evidence table, rubric, 20-issue pilot | Done: rubric v0.2 approved Nov 12; pilot in `docs/pilot_triage.md` |
 | Setup | Claude Code project rules, answer-key deny rules, triage skill, blind-labels template | Done Nov 12 |
 | 2 | Full triage run, comment threads, dashboard, reusable skill, weekly refresh | Done Nov 14: 163 issues in 161 groups (5 S1, 17 S2, 84 S3, 13 S4; 42 not rated); validator, dashboard and weekly Action added |
-| 3 | Accuracy check vs. human and maintainer labels, write-up | Not started |
+| 3 | Accuracy check vs. human and maintainer labels, write-up | Done Nov 14: blind-set severity agreement with maintainers 74% exact for the agent, 60% for the human, both 100% within one level; draft post in `docs/linkedin_post.md` |
 
 ## Dataset (Day 1)
 
