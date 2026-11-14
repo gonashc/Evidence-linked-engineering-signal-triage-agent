@@ -1,0 +1,49 @@
+[
+ {
+  "url": "https://api.github.com/repos/angular/angular/issues/comments/6513205786",
+  "html_url": "https://github.com/angular/angular/issues/71384#issuecomment-6513205786",
+  "issue_url": "https://api.github.com/repos/angular/angular/issues/71384",
+  "id": 6513205786,
+  "node_id": "IC_kwDOAXExC88AAAABhDeiGg",
+  "user": {
+   "login": "JeanMeche",
+   "id": 1300985,
+   "node_id": "MDQ6VXNlcjEzMDA5ODU=",
+   "avatar_url": "https://avatars.githubusercontent.com/u/1300985?v=4",
+   "gravatar_id": "",
+   "url": "https://api.github.com/users/JeanMeche",
+   "html_url": "https://github.com/JeanMeche",
+   "followers_url": "https://api.github.com/users/JeanMeche/followers",
+   "following_url": "https://api.github.com/users/JeanMeche/following{/other_user}",
+   "gists_url": "https://api.github.com/users/JeanMeche/gists{/gist_id}",
+   "starred_url": "https://api.github.com/users/JeanMeche/starred{/owner}{/repo}",
+   "subscriptions_url": "https://api.github.com/users/JeanMeche/subscriptions",
+   "organizations_url": "https://api.github.com/users/JeanMeche/orgs",
+   "repos_url": "https://api.github.com/users/JeanMeche/repos",
+   "events_url": "https://api.github.com/users/JeanMeche/events{/privacy}",
+   "received_events_url": "https://api.github.com/users/JeanMeche/received_events",
+   "type": "User",
+   "user_view_type": "public",
+   "site_admin": false
+  },
+  "created_at": "2026-10-30T02:08:40Z",
+  "updated_at": "2026-10-30T02:08:40Z",
+  "body": "I don't think a skill would bring value here. Our http stack didn't change in many years and there is no knowledge for the skills to fill. ",
+  "author_association": "MEMBER",
+  "pin": null,
+  "reactions": {
+   "url": "https://api.github.com/repos/angular/angular/issues/comments/6513205786/reactions",
+   "total_count": 0,
+   "+1": 0,
+   "-1": 0,
+   "laugh": 0,
+   "hooray": 0,
+   "confused": 0,
+   "heart": 0,
+   "rocket": 0,
+   "eyes": 0
+  },
+  "performed_via_github_app": null,
+  "minimized": null
+ }
+]

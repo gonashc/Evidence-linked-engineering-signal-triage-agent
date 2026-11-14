@@ -1,0 +1,49 @@
+[
+ {
+  "url": "https://api.github.com/repos/angular/angular/issues/comments/6304333667",
+  "html_url": "https://github.com/angular/angular/issues/71465#issuecomment-6304333667",
+  "issue_url": "https://api.github.com/repos/angular/angular/issues/71465",
+  "id": 6304333667,
+  "node_id": "IC_kwDOAXExC88AAAABd8R_Yw",
+  "user": {
+   "login": "atscott",
+   "id": 479713,
+   "node_id": "MDQ6VXNlcjQ3OTcxMw==",
+   "avatar_url": "https://avatars.githubusercontent.com/u/479713?v=4",
+   "gravatar_id": "",
+   "url": "https://api.github.com/users/atscott",
+   "html_url": "https://github.com/atscott",
+   "followers_url": "https://api.github.com/users/atscott/followers",
+   "following_url": "https://api.github.com/users/atscott/following{/other_user}",
+   "gists_url": "https://api.github.com/users/atscott/gists{/gist_id}",
+   "starred_url": "https://api.github.com/users/atscott/starred{/owner}{/repo}",
+   "subscriptions_url": "https://api.github.com/users/atscott/subscriptions",
+   "organizations_url": "https://api.github.com/users/atscott/orgs",
+   "repos_url": "https://api.github.com/users/atscott/repos",
+   "events_url": "https://api.github.com/users/atscott/events{/privacy}",
+   "received_events_url": "https://api.github.com/users/atscott/received_events",
+   "type": "User",
+   "user_view_type": "public",
+   "site_admin": false
+  },
+  "created_at": "2026-10-20T23:44:23Z",
+  "updated_at": "2026-10-20T23:44:23Z",
+  "body": "I don't think we should add a callback option to `IsActiveMatchOptions` here. The case that doesn't work today is \"All is active when there's no `preset` query param\". That's really a check on app state, and if you're writing the predicate yourself, it's simpler to skip `routerLinkActive` for that link and bind the active state directly:\n```ts\nprivate readonly queryParamMap = toSignal(inject(ActivatedRoute).queryParamMap);\nprotected readonly preset = computed(() => this.queryParamMap()?.get('preset'));\n```\n```html\n<a routerLink=\".\" [class.active]=\"!preset()\" [attr.aria-current]=\"!preset() ? 'page' : null\">All</a>\n```\nThe \"Important\" tab should already work with `queryParams: 'subset'`, since `{preset: 1}` is a subset of `{preset: 1, status: 'done'}`. Another option is to bind the current filter params onto the links and use `exact`, though that changes the \"tabs clear the filters\" behavior you described.\nAs you mentioned, a callback also couldn't be applied consistently to `paths` or `matrixParams`. Since `IsActiveMatchOptions` is shared with `Router.isActive` and the standalone `isActive` function, adding it for only one option would make that API inconsistent, and the same thing can already be done in a few lines.",
+  "author_association": "CONTRIBUTOR",
+  "pin": null,
+  "reactions": {
+   "url": "https://api.github.com/repos/angular/angular/issues/comments/6304333667/reactions",
+   "total_count": 0,
+   "+1": 0,
+   "-1": 0,
+   "laugh": 0,
+   "hooray": 0,
+   "confused": 0,
+   "heart": 0,
+   "rocket": 0,
+   "eyes": 0
+  },
+  "performed_via_github_app": null,
+  "minimized": null
+ }
+]

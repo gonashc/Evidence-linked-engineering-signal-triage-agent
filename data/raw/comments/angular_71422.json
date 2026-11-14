@@ -1,0 +1,49 @@
+[
+ {
+  "url": "https://api.github.com/repos/angular/angular/issues/comments/6260841863",
+  "html_url": "https://github.com/angular/angular/issues/71422#issuecomment-6260841863",
+  "issue_url": "https://api.github.com/repos/angular/angular/issues/71422",
+  "id": 6260841863,
+  "node_id": "IC_kwDOAXExC88AAAABdSzdhw",
+  "user": {
+   "login": "demike",
+   "id": 1626922,
+   "node_id": "MDQ6VXNlcjE2MjY5MjI=",
+   "avatar_url": "https://avatars.githubusercontent.com/u/1626922?v=4",
+   "gravatar_id": "",
+   "url": "https://api.github.com/users/demike",
+   "html_url": "https://github.com/demike",
+   "followers_url": "https://api.github.com/users/demike/followers",
+   "following_url": "https://api.github.com/users/demike/following{/other_user}",
+   "gists_url": "https://api.github.com/users/demike/gists{/gist_id}",
+   "starred_url": "https://api.github.com/users/demike/starred{/owner}{/repo}",
+   "subscriptions_url": "https://api.github.com/users/demike/subscriptions",
+   "organizations_url": "https://api.github.com/users/demike/orgs",
+   "repos_url": "https://api.github.com/users/demike/repos",
+   "events_url": "https://api.github.com/users/demike/events{/privacy}",
+   "received_events_url": "https://api.github.com/users/demike/received_events",
+   "type": "User",
+   "user_view_type": "public",
+   "site_admin": false
+  },
+  "created_at": "2026-10-19T06:07:46Z",
+  "updated_at": "2026-10-19T06:07:46Z",
+  "body": "Some more numbers, to show how this scales. Measured in a blank page (Chromium 153), with and without CPU throttling; the table in the description is the 4× column (throttled to emulate a low-end device, which is where we noticed it).\n\n**Cost per call by call stack depth:**\n\n| Call stack depth | `abort()` 1× | `abort(reason)` 1× | `abort()` 4× | `abort(reason)` 4× |\n|---|---|---|---|---|\n| 5 | 2.9 µs | 0.2 µs | 12 µs | 0.6 µs |\n| 100 | 14 µs | 0.1 µs | 78 µs | 0.6 µs |\n| 300 | 28 µs | 0.2 µs | 141 µs | 1.0 µs |\n| 1000 | 28 µs | 0.1 µs | 145 µs | 0.6 µs |\n\n**Total time by number of destroyed resources** (one abort listener each, like `rxResource`; depth 300; mean of 20 runs):\n\n| Resources | `abort()` 1× | `abort(reason)` 1× | `abort()` 4× | `abort(reason)` 4× |\n|---|---|---|---|---|\n| 10 | 0.26 ms | 0.01 ms | 1.6 ms | 0.03 ms |\n| 50 | 1.8 ms | 0.03 ms | 8.4 ms | 0.12 ms |\n| 100 | 2.9 ms | 0.02 ms | 15.8 ms | 0.23 ms |\n| 250 | 7.5 ms | 0.1 ms | 39 ms | 0.5 ms |\n| 500 | 14.7 ms | 0.17 ms | 80 ms | 1.1 ms |\n| 1000 | 30 ms | 0.4 ms | 165 ms | 2.1 ms |\n\nSo the cost grows linearly with the number of resources, about 30 µs per resource on a desktop CPU and about 160 µs on a low-end device, while `abort(reason)` stays negligible. In our application ~90 resources are destroyed per navigation (24–35 ms with 4× throttling).\n\nSnippet for the console (use the Performance panel's CPU throttling for the 4× numbers):\n\n```js\nconst atDepth = (d, fn) => (d === 0 ? fn() : atDepth(d - 1, fn));\n// mean ms to abort `count` controllers (one abort listener each, like rxResource) at call stack depth `depth`\nconst teardown = (count, depth, reason, runs = 20) => {\n  let total = 0;\n  for (let run = 0; run < runs; run++) {\n    const controllers = Array.from({ length: count }, () => {\n      const c = new AbortController();\n      c.signal.addEventListener('abort', () => {});\n      return c;\n    });\n    total += atDepth(depth, () => {\n      const start = performance.now();\n      for (const c of controllers) reason === undefined ? c.abort() : c.abort(reason);\n      return performance.now() - start;\n    });\n  }\n  return `${(total / runs).toFixed(2)} ms`;\n};\nfor (const count of [10, 50, 100, 250, 500, 1000]) {\n  console.log(count, 'abort():', teardown(count, 300), 'abort(reason):', teardown(count, 300, 'destroyed'));\n}\n```\n",
+  "author_association": "CONTRIBUTOR",
+  "pin": null,
+  "reactions": {
+   "url": "https://api.github.com/repos/angular/angular/issues/comments/6260841863/reactions",
+   "total_count": 0,
+   "+1": 0,
+   "-1": 0,
+   "laugh": 0,
+   "hooray": 0,
+   "confused": 0,
+   "heart": 0,
+   "rocket": 0,
+   "eyes": 0
+  },
+  "performed_via_github_app": null,
+  "minimized": null
+ }
+]

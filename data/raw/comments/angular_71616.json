@@ -1,0 +1,49 @@
+[
+ {
+  "url": "https://api.github.com/repos/angular/angular/issues/comments/6406535717",
+  "html_url": "https://github.com/angular/angular/issues/71616#issuecomment-6406535717",
+  "issue_url": "https://api.github.com/repos/angular/angular/issues/71616",
+  "id": 6406535717,
+  "node_id": "IC_kwDOAXExC88AAAABfdv6JQ",
+  "user": {
+   "login": "fabioemoutinho",
+   "id": 26363255,
+   "node_id": "MDQ6VXNlcjI2MzYzMjU1",
+   "avatar_url": "https://avatars.githubusercontent.com/u/26363255?v=4",
+   "gravatar_id": "",
+   "url": "https://api.github.com/users/fabioemoutinho",
+   "html_url": "https://github.com/fabioemoutinho",
+   "followers_url": "https://api.github.com/users/fabioemoutinho/followers",
+   "following_url": "https://api.github.com/users/fabioemoutinho/following{/other_user}",
+   "gists_url": "https://api.github.com/users/fabioemoutinho/gists{/gist_id}",
+   "starred_url": "https://api.github.com/users/fabioemoutinho/starred{/owner}{/repo}",
+   "subscriptions_url": "https://api.github.com/users/fabioemoutinho/subscriptions",
+   "organizations_url": "https://api.github.com/users/fabioemoutinho/orgs",
+   "repos_url": "https://api.github.com/users/fabioemoutinho/repos",
+   "events_url": "https://api.github.com/users/fabioemoutinho/events{/privacy}",
+   "received_events_url": "https://api.github.com/users/fabioemoutinho/received_events",
+   "type": "User",
+   "user_view_type": "public",
+   "site_admin": false
+  },
+  "created_at": "2026-10-26T01:58:35Z",
+  "updated_at": "2026-10-26T01:58:35Z",
+  "body": "Related: a fix for the same mismatch exists as an unmerged commit, bb6d0109a073a3a9d9db2e69686d0c91d2d1b4ff (for #67241). See the discussion on #71617.",
+  "author_association": "CONTRIBUTOR",
+  "pin": null,
+  "reactions": {
+   "url": "https://api.github.com/repos/angular/angular/issues/comments/6406535717/reactions",
+   "total_count": 0,
+   "+1": 0,
+   "-1": 0,
+   "laugh": 0,
+   "hooray": 0,
+   "confused": 0,
+   "heart": 0,
+   "rocket": 0,
+   "eyes": 0
+  },
+  "performed_via_github_app": null,
+  "minimized": null
+ }
+]

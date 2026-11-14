@@ -1,0 +1,49 @@
+[
+ {
+  "url": "https://api.github.com/repos/angular/angular/issues/comments/6221189321",
+  "html_url": "https://github.com/angular/angular/issues/71399#issuecomment-6221189321",
+  "issue_url": "https://api.github.com/repos/angular/angular/issues/71399",
+  "id": 6221189321,
+  "node_id": "IC_kwDOAXExC88AAAABcs_QyQ",
+  "user": {
+   "login": "JeanMeche",
+   "id": 1300985,
+   "node_id": "MDQ6VXNlcjEzMDA5ODU=",
+   "avatar_url": "https://avatars.githubusercontent.com/u/1300985?v=4",
+   "gravatar_id": "",
+   "url": "https://api.github.com/users/JeanMeche",
+   "html_url": "https://github.com/JeanMeche",
+   "followers_url": "https://api.github.com/users/JeanMeche/followers",
+   "following_url": "https://api.github.com/users/JeanMeche/following{/other_user}",
+   "gists_url": "https://api.github.com/users/JeanMeche/gists{/gist_id}",
+   "starred_url": "https://api.github.com/users/JeanMeche/starred{/owner}{/repo}",
+   "subscriptions_url": "https://api.github.com/users/JeanMeche/subscriptions",
+   "organizations_url": "https://api.github.com/users/JeanMeche/orgs",
+   "repos_url": "https://api.github.com/users/JeanMeche/repos",
+   "events_url": "https://api.github.com/users/JeanMeche/events{/privacy}",
+   "received_events_url": "https://api.github.com/users/JeanMeche/received_events",
+   "type": "User",
+   "user_view_type": "public",
+   "site_admin": false
+  },
+  "created_at": "2026-10-16T17:37:23Z",
+  "updated_at": "2026-10-16T17:37:23Z",
+  "body": "> Given all of that, I come to the following conclusion: the need exists, and a simple solution is already implemented. So, why not do it?\n\nThis doesn't need to be provided at the framework level and can be implemented in userland (and therefore in a community library). As such, we stand by with what was stated in #48167. We don't see a case for this to be implemented in the framework itself. \n\nWe framework isn't intended to support every possible usecase but it should allow you to build everything you need by giving you the necessary building blocks to do so (here the interceptors for example). \n\nThank you for your understanding. ",
+  "author_association": "MEMBER",
+  "pin": null,
+  "reactions": {
+   "url": "https://api.github.com/repos/angular/angular/issues/comments/6221189321/reactions",
+   "total_count": 0,
+   "+1": 0,
+   "-1": 0,
+   "laugh": 0,
+   "hooray": 0,
+   "confused": 0,
+   "heart": 0,
+   "rocket": 0,
+   "eyes": 0
+  },
+  "performed_via_github_app": null,
+  "minimized": null
+ }
+]

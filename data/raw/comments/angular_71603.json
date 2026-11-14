@@ -1,0 +1,49 @@
+[
+ {
+  "url": "https://api.github.com/repos/angular/angular/issues/comments/6390969340",
+  "html_url": "https://github.com/angular/angular/issues/71603#issuecomment-6390969340",
+  "issue_url": "https://api.github.com/repos/angular/angular/issues/71603",
+  "id": 6390969340,
+  "node_id": "IC_kwDOAXExC88AAAABfO5z_A",
+  "user": {
+   "login": "JeanMeche",
+   "id": 1300985,
+   "node_id": "MDQ6VXNlcjEzMDA5ODU=",
+   "avatar_url": "https://avatars.githubusercontent.com/u/1300985?v=4",
+   "gravatar_id": "",
+   "url": "https://api.github.com/users/JeanMeche",
+   "html_url": "https://github.com/JeanMeche",
+   "followers_url": "https://api.github.com/users/JeanMeche/followers",
+   "following_url": "https://api.github.com/users/JeanMeche/following{/other_user}",
+   "gists_url": "https://api.github.com/users/JeanMeche/gists{/gist_id}",
+   "starred_url": "https://api.github.com/users/JeanMeche/starred{/owner}{/repo}",
+   "subscriptions_url": "https://api.github.com/users/JeanMeche/subscriptions",
+   "organizations_url": "https://api.github.com/users/JeanMeche/orgs",
+   "repos_url": "https://api.github.com/users/JeanMeche/repos",
+   "events_url": "https://api.github.com/users/JeanMeche/events{/privacy}",
+   "received_events_url": "https://api.github.com/users/JeanMeche/received_events",
+   "type": "User",
+   "user_view_type": "public",
+   "site_admin": false
+  },
+  "created_at": "2026-10-24T23:38:32Z",
+  "updated_at": "2026-10-24T23:50:35Z",
+  "body": "While it's true that standard browsers reflect popover, inert, and max from IDL properties to content attributes, Angular's template binding model fundamentally targets DOM properties (el[name] = value), not HTML attributes.\n\nDomino was designed as a lightweight DOM for SSR serialization, not a full WHATWG IDL compliance engine. Trying to manually maintain browser reflection parity in Domino for every newly standardized property is an endless maintenance burden.\n\nFurthermore, several of these properties (like popoverTargetElement or commandForElement) take element references in IDL, which cannot be reflected to HTML attributes anyway.\n\nFor properties that are strictly 1:1 reflected attributes needed for initial SSR render (like popover or inert), updating Domino's reflection definitions may be a practical fix for now, but we should be cautious about adding complex spec-validation getters (e.g. clamping meter values or parsing command keywords) into Domino.\n\n",
+  "author_association": "MEMBER",
+  "pin": null,
+  "reactions": {
+   "url": "https://api.github.com/repos/angular/angular/issues/comments/6390969340/reactions",
+   "total_count": 0,
+   "+1": 0,
+   "-1": 0,
+   "laugh": 0,
+   "hooray": 0,
+   "confused": 0,
+   "heart": 0,
+   "rocket": 0,
+   "eyes": 0
+  },
+  "performed_via_github_app": null,
+  "minimized": null
+ }
+]

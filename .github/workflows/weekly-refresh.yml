@@ -1,0 +1,67 @@
+name: Weekly refresh
+
+# Rebuilds the dashboard from the committed triage and lists issues created after the
+# triaged window. It does not run the triage agent, does not commit, and never reads
+# data/answer_key/ or data/raw/.
+
+on:
+  schedule:
+    - cron: "0 6 * * 1" # Mondays 06:00 UTC
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "data/triage/**"
+      - "scripts/build_dashboard.py"
+      - "scripts/validate.py"
+      - "schemas/**"
+      - ".github/workflows/weekly-refresh.yml"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install validator dependency
+        run: python3 -m pip install -r requirements.txt
+
+      - name: Validate triage output
+        run: python3 -I scripts/validate.py data/triage/groups.jsonl
+
+      - name: List issues created after the triaged window
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: >
+          python3 -I scripts/fetch_new_issues.py --since 2026-11-11
+          --out out/new_issues.json --exclude data/derived/evidence_blind.csv
+
+      - name: Build dashboard
+        run: python3 -I scripts/build_dashboard.py data/triage/groups.jsonl site --new out/new_issues.json
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

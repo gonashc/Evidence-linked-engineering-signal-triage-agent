@@ -1,0 +1,49 @@
+[
+ {
+  "url": "https://api.github.com/repos/angular/angular-cli/issues/comments/6381949478",
+  "html_url": "https://github.com/angular/angular-cli/issues/34515#issuecomment-6381949478",
+  "issue_url": "https://api.github.com/repos/angular/angular-cli/issues/34515",
+  "id": 6381949478,
+  "node_id": "IC_kwDOAjLs288AAAABfGTSJg",
+  "user": {
+   "login": "alan-agius4",
+   "id": 17563226,
+   "node_id": "MDQ6VXNlcjE3NTYzMjI2",
+   "avatar_url": "https://avatars.githubusercontent.com/u/17563226?v=4",
+   "gravatar_id": "",
+   "url": "https://api.github.com/users/alan-agius4",
+   "html_url": "https://github.com/alan-agius4",
+   "followers_url": "https://api.github.com/users/alan-agius4/followers",
+   "following_url": "https://api.github.com/users/alan-agius4/following{/other_user}",
+   "gists_url": "https://api.github.com/users/alan-agius4/gists{/gist_id}",
+   "starred_url": "https://api.github.com/users/alan-agius4/starred{/owner}{/repo}",
+   "subscriptions_url": "https://api.github.com/users/alan-agius4/subscriptions",
+   "organizations_url": "https://api.github.com/users/alan-agius4/orgs",
+   "repos_url": "https://api.github.com/users/alan-agius4/repos",
+   "events_url": "https://api.github.com/users/alan-agius4/events{/privacy}",
+   "received_events_url": "https://api.github.com/users/alan-agius4/received_events",
+   "type": "User",
+   "user_view_type": "public",
+   "site_admin": false
+  },
+  "created_at": "2026-10-24T08:22:33Z",
+  "updated_at": "2026-10-24T08:22:33Z",
+  "body": "Thanks for the detailed writeup and investigation!\n\nA few points I would like to clarify here:\n\n1. The premise that browser polyfills are fully explicit while server polyfills are implicit is not entirely accurate. The CLI already shapes the browser polyfills bundle depending on the project configuration. For instance, in JIT mode it injects `@angular/compiler`, when a source locale is defined it injects the locale data, and it removes `@angular/localize` when translation inlining is enabled. Similarly on the server side, polyfills are derived declaratively from the same application configuration. If an application is zoneless, Zone.js is omitted. If it is zoned, the appropriate node or neutral entry is used. If localize is configured, localize init is included. The `polyfills` option in `angular.json` is meant to define application level capabilities rather than low level bundle entry lists.\n\n2. `ɵENABLE_DOM_EMULATION` is a private token used solely for internal framework benchmarks in the angular repository. In those benchmarks, the SSR code was executed inside a headless Chrome browser to measure rendering performance against a real DOM. Running outside a browser with DOM emulation disabled is explicitly rejected at runtime by platform server (`RuntimeError: 5704 (DISABLED_DOM_EMULATION_IN_NON_BROWSER)`). DOM emulation is required for Angular SSR to function, so providing an option to turn it off in server builds would expose an invalid and unsupported state.\n\n3. `@angular/platform-server/init` is necessary for module evaluation time. While `DominoAdapter.makeCurrent()` applies DOM shims during platform initialization, `init` is needed before that when modules are first evaluated. Any top level code or third party dependency referencing DOM globals (such as `HTMLElement`, `customElements`, or `Event` in `@angular/elements` or web component libraries) will fail immediately with a `ReferenceError` when the server bundle loads if `init` is not present. Deferring this to platform initialization would also not keep `globalThis` clean, as Domino still mutates `globalThis` on the very first render request anyway.\n\n4. The disk and heap overhead cited from #34514 is caused by Domino being bundled twice across independent build contexts. This is a separate bundling issue tracked in #34514. Because platform server requires Domino for `DominoAdapter` anyway, omitting `init` would not reduce the server bundle footprint because Domino would simply be bundled into the server chunk instead. The `init` module itself is only a few lines of code and adds negligible overhead.\n\n5. Server polyfills are already supported through standard imports. Unlike browsers which depend on script tags injected into the HTML document, server applications already have explicit entry points. Runtime shims can be imported directly at the top of `src/server.ts`, and build time or SSG shims can be imported in `src/main.server.ts`.\n\nGiven the above, we do not plan to introduce user controllable server polyfills, and I will be closing this issue.",
+  "author_association": "COLLABORATOR",
+  "pin": null,
+  "reactions": {
+   "url": "https://api.github.com/repos/angular/angular-cli/issues/comments/6381949478/reactions",
+   "total_count": 1,
+   "+1": 1,
+   "-1": 0,
+   "laugh": 0,
+   "hooray": 0,
+   "confused": 0,
+   "heart": 0,
+   "rocket": 0,
+   "eyes": 0
+  },
+  "performed_via_github_app": null,
+  "minimized": null
+ }
+]

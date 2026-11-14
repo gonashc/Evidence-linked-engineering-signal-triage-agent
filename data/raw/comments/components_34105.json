@@ -1,0 +1,49 @@
+[
+ {
+  "url": "https://api.github.com/repos/angular/components/issues/comments/6773562962",
+  "html_url": "https://github.com/angular/components/issues/34105#issuecomment-6773562962",
+  "issue_url": "https://api.github.com/repos/angular/components/issues/34105",
+  "id": 6773562962,
+  "node_id": "IC_kwDOAuvuAs8AAAABk7xeUg",
+  "user": {
+   "login": "Devyalamaddi",
+   "id": 173076168,
+   "node_id": "U_kgDOClDuyA",
+   "avatar_url": "https://avatars.githubusercontent.com/u/173076168?v=4",
+   "gravatar_id": "",
+   "url": "https://api.github.com/users/Devyalamaddi",
+   "html_url": "https://github.com/Devyalamaddi",
+   "followers_url": "https://api.github.com/users/Devyalamaddi/followers",
+   "following_url": "https://api.github.com/users/Devyalamaddi/following{/other_user}",
+   "gists_url": "https://api.github.com/users/Devyalamaddi/gists{/gist_id}",
+   "starred_url": "https://api.github.com/users/Devyalamaddi/starred{/owner}{/repo}",
+   "subscriptions_url": "https://api.github.com/users/Devyalamaddi/subscriptions",
+   "organizations_url": "https://api.github.com/users/Devyalamaddi/orgs",
+   "repos_url": "https://api.github.com/users/Devyalamaddi/repos",
+   "events_url": "https://api.github.com/users/Devyalamaddi/events{/privacy}",
+   "received_events_url": "https://api.github.com/users/Devyalamaddi/received_events",
+   "type": "User",
+   "user_view_type": "public",
+   "site_admin": false
+  },
+  "created_at": "2026-11-10T16:55:30Z",
+  "updated_at": "2026-11-10T16:55:30Z",
+  "body": "Hi @ryuran, thanks for raising this suggestion!\n\nUsing `<svg><use href=\"#...\"></use></svg>` with `<symbol>` is a classic technique for reducing DOM node count, but in the context of Angular Material, there are several known browser and architectural constraints that led to the current inlined cloning implementation:\n\n1. **Client-side routing and `<base href>` breakages**:\n   The maintainers actually noted this directly in [`icon-registry.ts`](https://github.com/angular/components/blob/main/src/material/icon/icon-registry.ts#L551-L554):\n   > *\"Note that the same could be achieved by referring to it via `<use href=\"#id\">`, however the `<use>` tag is problematic on Firefox, because it needs to include the current page path.\"*\n   \n   In SPAs using HTML5 pushState routing or `<base href>`, relative fragment references (`#id`) break across page transitions unless dynamically rewritten with the full current pathname on every route change.\n\n2. **CSS styling encapsulation**:\n   Elements rendered through `<use>` exist in a closed user-agent shadow root. External CSS and component-scoped styles (such as `mat-icon path { fill: currentColor; }` or targeting specific child layers of multi-color icons) cannot penetrate the `<use>` boundary. Inlining the SVG nodes ensures that CSS styling, theme colors, and animations work as expected.\n\n3. **Lifecycle & SSR/Hydration**:\n   Managing a global `<svg>` definition sprite in the document body or head introduces state-management complexity, potential memory leaks when icons are registered dynamically, and hydration mismatches during server-side rendering.\n\nGiven these trade-offs, inlining the SVG node has remained the most reliable, cross-browser, and styleable solution. It would be interesting to hear the maintainers' current thoughts on whether an opt-in symbol strategy could ever be considered, or if these constraints still make it a non-starter.",
+  "author_association": "NONE",
+  "pin": null,
+  "reactions": {
+   "url": "https://api.github.com/repos/angular/components/issues/comments/6773562962/reactions",
+   "total_count": 0,
+   "+1": 0,
+   "-1": 0,
+   "laugh": 0,
+   "hooray": 0,
+   "confused": 0,
+   "heart": 0,
+   "rocket": 0,
+   "eyes": 0
+  },
+  "performed_via_github_app": null,
+  "minimized": null
+ }
+]

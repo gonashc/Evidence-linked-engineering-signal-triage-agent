@@ -1,0 +1,49 @@
+[
+ {
+  "url": "https://api.github.com/repos/angular/angular-cli/issues/comments/6195662871",
+  "html_url": "https://github.com/angular/angular-cli/issues/34360#issuecomment-6195662871",
+  "issue_url": "https://api.github.com/repos/angular/angular-cli/issues/34360",
+  "id": 6195662871,
+  "node_id": "IC_kwDOAjLs288AAAABcUpQFw",
+  "user": {
+   "login": "alan-agius4",
+   "id": 17563226,
+   "node_id": "MDQ6VXNlcjE3NTYzMjI2",
+   "avatar_url": "https://avatars.githubusercontent.com/u/17563226?v=4",
+   "gravatar_id": "",
+   "url": "https://api.github.com/users/alan-agius4",
+   "html_url": "https://github.com/alan-agius4",
+   "followers_url": "https://api.github.com/users/alan-agius4/followers",
+   "following_url": "https://api.github.com/users/alan-agius4/following{/other_user}",
+   "gists_url": "https://api.github.com/users/alan-agius4/gists{/gist_id}",
+   "starred_url": "https://api.github.com/users/alan-agius4/starred{/owner}{/repo}",
+   "subscriptions_url": "https://api.github.com/users/alan-agius4/subscriptions",
+   "organizations_url": "https://api.github.com/users/alan-agius4/orgs",
+   "repos_url": "https://api.github.com/users/alan-agius4/repos",
+   "events_url": "https://api.github.com/users/alan-agius4/events{/privacy}",
+   "received_events_url": "https://api.github.com/users/alan-agius4/received_events",
+   "type": "User",
+   "user_view_type": "public",
+   "site_admin": false
+  },
+  "created_at": "2026-10-15T15:22:32Z",
+  "updated_at": "2026-10-15T15:22:32Z",
+  "body": "`@angular-devkit/build-angular:browser` does not natively support Module Federation or custom Webpack configurations. Using `ModuleFederationPlugin` requires modifying the internal Webpack configuration via a third-party builder (such as `@angular-architects/module-federation`), which is not supported by the Angular team. Additionally, the Webpack-based build pipeline (`browser` builder) is deprecated in favor of the `@angular/build:application` builder (which can be used with solutions like `@angular-architects/native-federation`).\n\nBecause this crash is caused by an upstream incompatibility between `webpack >= 5.107.0` and `license-webpack-plugin` when `ProvideSharedModule` is added to the Webpack compilation, we do not plan to fork or monkey-patch `license-webpack-plugin` in `@angular-devkit/build-angular`.\n\nIf a fix is released upstream in `license-webpack-plugin` (e.g., `4.0.3`), it will be picked up automatically by the existing `^4.0.2` version range. In the meantime, the recommended workarounds are:\n- Migrating to the `@angular/build:application` builder and `@angular-architects/native-federation`\n- Patching `license-webpack-plugin` locally (e.g., via `patch-package` or `pnpm patch`)\n- Reporting this to `@angular-architects/module-federation`, as their builder could potentially adjust or wrap the plugin in the custom Webpack config.",
+  "author_association": "COLLABORATOR",
+  "pin": null,
+  "reactions": {
+   "url": "https://api.github.com/repos/angular/angular-cli/issues/comments/6195662871/reactions",
+   "total_count": 0,
+   "+1": 0,
+   "-1": 0,
+   "laugh": 0,
+   "hooray": 0,
+   "confused": 0,
+   "heart": 0,
+   "rocket": 0,
+   "eyes": 0
+  },
+  "performed_via_github_app": null,
+  "minimized": null
+ }
+]
